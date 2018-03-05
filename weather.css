@@ -1,0 +1,56 @@
+
+html {
+    height: 100%
+}
+body {
+    background-repeat: no-repeat;
+    background: linear-gradient(to bottom right, rgb(183, 210, 255), rgb(0, 56, 111));
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button {
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(3, 64, 89);
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  width: 55px;
+}
+
+button:hover {
+  background-color: rgb(3, 73, 102);
+}
+
+footer {
+  text-align: center;
+}
+
+a:link {
+  color: rgb(18, 62, 83);
+}
+
+a:visited {
+    color: rgb(19, 45, 57);
+}
+
+.fahrenheit-button {
+  float: left;
+}
+
+.celsius-button {
+  float: right;
+}
+
+.buttons {
+  padding: 65px;
+}
+
+
+#w_icon {
+  height: 100px;
+}
