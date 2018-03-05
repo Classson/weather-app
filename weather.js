@@ -18,7 +18,7 @@ if (navigator.geolocation) {
 
         // get weather info from weatherunderground
         weatherObject = new XMLHttpRequest();
-        cityURL = 'http://api.wunderground.com/api/72ef49057aa67bbf/conditions/q/' + state + '/' + city + '.json'
+        cityURL = 'https://api.wunderground.com/api/72ef49057aa67bbf/conditions/q/' + state + '/' + city + '.json'
 
         weatherObject.open('GET', cityURL, true);
         weatherObject.send();
