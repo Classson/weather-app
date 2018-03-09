@@ -1,20 +1,23 @@
-
 $(document).ready(function() {
+
+// finds location
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
       currentLat = position.coords.latitude;
       currentLong = position.coords.longitude;
 
       // reverse geolocation
-      locURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + currentLat + "," + currentLong + '&key=AIzaSyCOcDfOLiweoNHlydUB5P9-9OgeXgAI38U';
+      locationURL = 'https://api.geocod.io/v1.2/reverse?q=' + currentLat + ',' + currentLong + '&api_key=0f0709bb95a0b127ab111baba9575121a11ba95'
       locationGet = new XMLHttpRequest();
-      locationGet.open('GET', locURL, true)
+      locationGet.open('GET', locationURL, true);
       locationGet.send();
       locationGet.onload = function() {
         locationInfo = JSON.parse(locationGet.responseText);
-        document.getElementById('currentLoc').innerHTML = locationInfo.results[3].address_components[0].long_name;
-        city = locationInfo.results[3].address_components[0].long_name;
-        state = locationInfo.results[3].address_components[3].short_name;
+
+        state = locationInfo.results[0].address_components.state;
+        city = locationInfo.results[0].address_components.city;
+        console.log(state);
+        console.log(city);
 
         // get weather info from weatherunderground
         weatherObject = new XMLHttpRequest();
@@ -29,16 +32,20 @@ if (navigator.geolocation) {
 
           document.getElementById('currentTemp').innerHTML = weatherInfo.current_observation.temp_f + "&deg F";
           document.getElementById('w_icon').src = "https://icons.wxug.com/i/c/i/" + icon + ".gif";
+          document.getElementById('currentLoc').innerHTML = city;
           //document.getElementById('w_icon').src = weatherInfo.current_observation.icon_url;
 
           fTemp = weatherInfo.current_observation.temp_f;
           cTemp = weatherInfo.current_observation.temp_c;
+
 
         }
       }
   });
 }
 })
+
+//F and C buttons
 function fConvertFunct() {
   document.getElementById("currentTemp").innerHTML = fTemp +"&deg F";
 }
@@ -46,3 +53,11 @@ function fConvertFunct() {
 function cConvertFunct() {
   document.getElementById("currentTemp").innerHTML = cTemp +"&deg C";
 }
+
+// spinner overlay
+function loaderFunct() {
+  document.querySelector('#w_icon').addEventListener('load', function(){
+  document.getElementById("overlay").className = "hide";
+});
+}
+loaderFunct();
