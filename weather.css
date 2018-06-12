@@ -1,0 +1,119 @@
+:root {
+  --weatherClr: rgb(194, 75, 78);
+  --weatherClrLt: rgb(300, 75, 78);
+}
+
+html {
+    height: 100%
+}
+body {
+    background: rgba(65, 65, 65);
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--weatherClr)
+}
+
+h3 {
+  color: black;
+  margin-bottom: 8rem;
+}
+
+button {
+  border: none;
+  border-radius: 50%;
+  background-color: var(--weatherClr);
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 5rem;
+  height: 5rem;
+}
+
+button:hover {
+  background-color: var(--weatherClrLt);
+}
+
+footer {
+  text-align: center;
+}
+
+p {
+  color: black;
+
+}
+a:link {
+  color: black;
+}
+
+a:visited {
+    color: rgb(85, 85, 85);
+}
+
+.fahrenheit-button {
+  float: left;
+}
+
+.celsius-button {
+  float: right;
+}
+
+.buttons {
+  padding: 65px;
+}
+
+#currentTemp {
+  color: var(--weatherClr);
+  font-weight: bold;
+}
+
+#w_icon {
+  background-color: rgb(95, 95, 95);
+  height: 100px;
+  border: solid black;
+  border-radius: 50%;
+  padding: 2rem;
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 50, 50, 1);
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+#catFace {
+  border: solid 5px;
+  border-radius: 100%;
+  width: 40rem;
+  height: 40rem;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }to {
+    transform: rotate(360deg);
+  }
+}

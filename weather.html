@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Weather Checker</title>
+  <!-- bootstrap css stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- custom css stylesheet -->
+  <link rel="stylesheet" href="weather.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <!-- jquery and bootstrap cdn js file -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="overlay">
+    <h2>Hang Tight I'm Getting Your Weather</h2>
+    <img id="catFace" src="https://www.dreamalittlebigger.com/wp-content/uploads/2015/04/003-marla-dressed-up-cat-face-art-dreamalittlebigger.jpg" alt="cat face with sunglasses">
+  </div>
+  <div class="container">
+    <h1>What's it like out there?</h1>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 text-center">
+      <h3>The current temperature in <span id="currentLoc">Oz</span> is <span id="currentTemp">0</span></h3>
+      <img id="w_icon" src="" alt="current weather">
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 buttons">
+      <button class="fahrenheit-button" onclick="fConvertFunct()"> &deg;F </button>
+      <button class="celsius-button" onclick="cConvertFunct()"> &deg;C </button>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <footer>
+    <p>Weather data from <a href="https://www.wunderground.com">WeatherUnderground</a></p>
+  </footer>
+<script src="weather.js"></script>
+</body>
+</html>
