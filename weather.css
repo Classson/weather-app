@@ -40,6 +40,7 @@ button {
 
 button:hover {
   background-color: var(--weatherClrLt);
+  transform: scale(1.2);
 }
 
 footer {
