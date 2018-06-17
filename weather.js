@@ -35,7 +35,7 @@ if (navigator.geolocation) {
           nightIcon = "https://icons.wxug.com/i/c/i/" + "nt_" + icon + ".gif";
 
           document.getElementById('currentTemp').innerHTML = weatherInfo.current_observation.temp_f + "&deg F";
-          document.getElementById('w_icon').src = "https://icons.wxug.com/i/c/i/" + "nt_" + icon + ".gif";
+          document.getElementById('w_icon').src = nightIcon;
           document.getElementById('currentLoc').innerHTML = city;
           //document.getElementById('w_icon').src = weatherInfo.current_observation.icon_url;
 
@@ -65,3 +65,6 @@ function loaderFunct() {
 });
 }
 loaderFunct();
+
+let date = Date();
+console.log("The time is " + date);
