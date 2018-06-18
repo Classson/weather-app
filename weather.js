@@ -31,8 +31,11 @@ if (navigator.geolocation) {
           weatherInfo = JSON.parse(weatherObject.responseText);
           icon = weatherInfo.current_observation.icon;
 
+          dayIcon = "https://icons.wxug.com/i/c/i/" + icon + ".gif";
+          nightIcon = "https://icons.wxug.com/i/c/i/" + "nt_" + icon + ".gif";
+
           document.getElementById('currentTemp').innerHTML = weatherInfo.current_observation.temp_f + "&deg F";
-          document.getElementById('w_icon').src = "https://icons.wxug.com/i/c/i/" + icon + ".gif";
+          document.getElementById('w_icon').src = "https://icons.wxug.com/i/c/i/" + "nt_" + icon + ".gif";
           document.getElementById('currentLoc').innerHTML = city;
           //document.getElementById('w_icon').src = weatherInfo.current_observation.icon_url;
 
