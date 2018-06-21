@@ -3,6 +3,10 @@
   --weatherClrLt: rgb(300, 75, 78);
 }
 
+.container {
+  display: grid;
+}
+
 html {
     height: 100%
 }

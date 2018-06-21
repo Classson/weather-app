@@ -4,9 +4,8 @@ $(document).ready(function() {
 // finds location
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
-      currentLat = position.coords.latitude;
-      currentLong = position.coords.longitude;
-
+      const currentLat = position.coords.latitude;
+      const currentLong = position.coords.longitude;
       // reverse geolocation
       locationURL = 'https://api.geocod.io/v1.2/reverse?q=' + currentLat + ',' + currentLong + '&api_key=0f0709bb95a0b127ab111baba9575121a11ba95'
       locationGet = new XMLHttpRequest();
@@ -42,7 +41,18 @@ if (navigator.geolocation) {
           fTemp = weatherInfo.current_observation.temp_f;
           cTemp = weatherInfo.current_observation.temp_c;
 
+          // finds sunrise and sunset time
+          function getSunInfo() {
 
+            dataObject = new XMLHttpRequest();
+            sunUrl = "https://api.sunrise-sunset.org/json?lat=" + currentLat + "&lng=" + currentLong + "&date=today";
+            dataObject.open('GET', sunUrl, true);
+            dataObject.send();
+            dataObject.onload = function() {
+              sunInfo = JSON.parse(dataObject.responseText);
+            }
+          }
+          getSunInfo();
         }
       }
   });
@@ -65,18 +75,3 @@ function loaderFunct() {
 });
 }
 loaderFunct();
-
-function getSunInfo() {
-
-  dataObject = new XMLHttpRequest();
-
-  dataObject.open('GET', "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400", true);
-  dataObject.send();
-  dataObject.onload = function() {
-
-    sunInfo = JSON.parse(dataObject.responseText);
-    console.log(sunInfo);
-  }
-}
-
-getSunInfo();
