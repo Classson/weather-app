@@ -5,8 +5,8 @@
 
 .container {
   display: grid;
-  grid-template-rows: fr1;
-  grid-template-columns: auto;
+  grid-template-rows: fr1 fr1 fr1;
+  grid-template-columns: fr1 fr1 fr1;
 }
 
 div {
@@ -35,7 +35,6 @@ h2 {
 
 h3 {
   color: black;
-  margin-bottom: 8rem;
 }
 
 button {
@@ -80,6 +79,11 @@ a:visited {
 
 .buttons {
   padding: 65px;
+}
+
+.temptext {
+  grid-row: 1 / 4;
+  justify-self: center;
 }
 
 #currentTemp {
