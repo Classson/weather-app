@@ -1,6 +1,4 @@
 
-$(document).ready(function() {
-
 // finds location
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -57,7 +55,6 @@ if (navigator.geolocation) {
       }
   });
 }
-})
 
 //F and C buttons
 function fConvertFunct() {
