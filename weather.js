@@ -67,7 +67,7 @@ function fConvertFunct() {
 function cConvertFunct() {
   document.getElementById("currentTemp").innerHTML = cTemp +"&deg C";
 }
-
+/*
 // spinner overlay
 function loaderFunct() {
   document.querySelector('#w_icon').addEventListener('load', function(){
@@ -75,3 +75,4 @@ function loaderFunct() {
 });
 }
 loaderFunct();
+*/
