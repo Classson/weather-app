@@ -5,8 +5,13 @@
 
 .container {
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: fr1;
   grid-template-columns: auto;
+}
+
+div {
+  border: solid;
+  border-width: 2px;
 }
 
 html {
