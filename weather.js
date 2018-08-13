@@ -73,3 +73,9 @@ function loaderFunct() {
 }
 loaderFunct();
 */
+
+let time =  new Date().toLocaleTimeString();
+console.log(time);
+
+let date = new Date();
+console.log(date);
