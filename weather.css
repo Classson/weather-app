@@ -8,6 +8,7 @@ html {
 }
 body {
     background: rgba(65, 65, 65);
+    padding: 15px;
 }
 
 h1 {
