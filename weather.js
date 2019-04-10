@@ -22,9 +22,12 @@ if (navigator.geolocation) {
 
         // get weather info from weatherunderground
         weatherObject = new XMLHttpRequest();
-        cityURL = 'https://api.wunderground.com/api/72ef49057aa67bbf/conditions/q/' + state + '/' + city + '.json'
+        cityURL = 'https://api.wunderground.com/api/72ef49057aa67bbf/conditions/q/' + state + '/' + city + '.jsonp'
+        jsonp =  "callback"
+        dataType = "jsonp"
 
         weatherObject.open('GET', cityURL, true);
+        console.log(weatherObject)
         weatherObject.send();
         weatherObject.onload = function() {
 
@@ -37,11 +40,9 @@ if (navigator.geolocation) {
           document.getElementById('currentTemp').innerHTML = weatherInfo.current_observation.temp_f + "&deg F";
           document.getElementById('w_icon').src = "https://icons.wxug.com/i/c/i/" + "nt_" + icon + ".gif";
           document.getElementById('currentLoc').innerHTML = city;
-          //document.getElementById('w_icon').src = weatherInfo.current_observation.icon_url;
 
           fTemp = weatherInfo.current_observation.temp_f;
           cTemp = weatherInfo.current_observation.temp_c;
-
 
         }
       }
@@ -66,17 +67,4 @@ function loaderFunct() {
 }
 loaderFunct();
 
-function getSunInfo() {
 
-  dataObject = new XMLHttpRequest();
-
-  dataObject.open('GET', "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400", true);
-  dataObject.send();
-  dataObject.onload = function() {
-
-    sunInfo = JSON.parse(dataObject.responseText);
-    console.log(sunInfo);
-  }
-}
-
-getSunInfo();
